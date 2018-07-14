@@ -1,10 +1,10 @@
-package Bai.ATM.service;
+package bai.atm.service;
 
-import Bai.ATM.dto.ListInfoDto;
-import Bai.ATM.dto.UserDto;
-import Bai.ATM.model.Cash;
+import bai.atm.dto.ListInfoDto;
+import bai.atm.dto.UserDto;
+import bai.atm.model.Cash;
 
-public interface IATMService {
+public interface IAtmService {
 	
 	ListInfoDto getAllCash();
 	

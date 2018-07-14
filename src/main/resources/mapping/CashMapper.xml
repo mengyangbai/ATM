@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="Bai.ATM.dao.CashMapper">
-  <resultMap id="BaseResultMap" type="Bai.ATM.model.Cash" >
+<mapper namespace="bai.atm.dao.CashMapper">
+  <resultMap id="BaseResultMap" type="bai.atm.model.Cash" >
     <result column="VALUE" property="value" jdbcType="INTEGER" />
     <result column="COUNT" property="count" jdbcType="INTEGER" />
   </resultMap>
@@ -22,7 +22,7 @@
      FROM `cash`
      where VALUE = #{value,jdbcType=INTEGER}
   </select>
-  <update id="dispenseCash" parameterType="Bai.ATM.model.Cash">
+  <update id="dispenseCash" parameterType="bai.atm.model.Cash">
 	update `cash`
 	set COUNT = COUNT - #{count,jdbcType=INTEGER}
 	where VALUE = #{value,jdbcType=INTEGER}

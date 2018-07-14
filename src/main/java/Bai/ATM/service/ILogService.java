@@ -1,6 +1,6 @@
-package Bai.ATM.service;
+package bai.atm.service;
 
-import Bai.ATM.model.Log;
+import bai.atm.model.Log;
 
 public interface ILogService {
 	

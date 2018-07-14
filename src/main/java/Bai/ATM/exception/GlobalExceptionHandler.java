@@ -1,4 +1,4 @@
-package Bai.ATM.exception;
+package bai.atm.exception;
 
 import java.io.IOException;
 import java.util.Map;
@@ -17,7 +17,7 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.context.request.RequestAttributes;
 import org.springframework.web.context.request.ServletRequestAttributes;
 
-import Bai.ATM.dto.ErrorDto;
+import bai.atm.dto.ErrorDto;
 
 @RestController
 public class GlobalExceptionHandler implements ErrorController {
@@ -67,15 +67,12 @@ public class GlobalExceptionHandler implements ErrorController {
         }
         
         String allMessage="\nMessage:"+messageFound+".\n When request path:"+path+". Here produces an exception:" + exception + ".\nTrace:\n"+trace;
-		// 打印异常信息：
 		info.setCode(status);
 		info.setMessage(lcaolGeMessage(messageFound));
 		LOGGER.error(allMessage);
 		return info;
 	}
-	/**
-	 * 处理异常信息
-	 */
+	
 	public String lcaolGeMessage(String messageString){
 		if(messageString.indexOf(":")!=messageString.lastIndexOf(":")){
 			messageString=messageString.substring(0,messageString.indexOf(":"))+". "+messageString.substring(messageString.indexOf(":")+1).substring(0,messageString.substring(messageString.indexOf(":")+1).indexOf(":"));
@@ -83,11 +80,7 @@ public class GlobalExceptionHandler implements ErrorController {
 		}
 		return messageString;
 	}
-	/**
-	 * 异常内容处理
-	 * @param messageFound
-	 * @return
-	 */
+	
 	public String dealWithExceptionContent(String messageFound){
 		if(messageFound.equalsIgnoreCase("No message available")){
         	messageFound="AccessDenied";
@@ -114,12 +107,7 @@ public class GlobalExceptionHandler implements ErrorController {
 	public String getErrorPath() {
 		return PATH;
 	}
-	/**
-	 * 根据请求处理数据
-	 * @param request
-	 * @param includeStackTrace
-	 * @return
-	 */
+	
 	private Map<String, Object> getErrorAttributes(HttpServletRequest request, boolean includeStackTrace) {
         
 	  	RequestAttributes requestAttributes = new ServletRequestAttributes(request);

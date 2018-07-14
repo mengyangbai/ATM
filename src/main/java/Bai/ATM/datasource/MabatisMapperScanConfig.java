@@ -1,4 +1,4 @@
-package Bai.ATM.datasource;
+package bai.atm.datasource;
 
 import org.mybatis.spring.mapper.MapperScannerConfigurer;
 import org.springframework.boot.autoconfigure.AutoConfigureAfter;
@@ -13,7 +13,7 @@ public class MabatisMapperScanConfig {
     public MapperScannerConfigurer mapperScannerConfigurer() {
         MapperScannerConfigurer mapperScannerConfigurer = new MapperScannerConfigurer();
         mapperScannerConfigurer.setSqlSessionFactoryBeanName("sqlSessionFactory");
-        mapperScannerConfigurer.setBasePackage("Bai.ATM.dao");
+        mapperScannerConfigurer.setBasePackage("bai.atm.dao");
         return mapperScannerConfigurer;
     }
 }

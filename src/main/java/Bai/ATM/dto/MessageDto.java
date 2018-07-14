@@ -1,4 +1,4 @@
-package Bai.ATM.dto;
+package bai.atm.dto;
 
 public class MessageDto implements ReturnDtoInfo{
 	private Integer code=200;                  

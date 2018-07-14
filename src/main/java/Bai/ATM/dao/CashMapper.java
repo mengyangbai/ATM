@@ -1,8 +1,8 @@
-package Bai.ATM.dao;
+package bai.atm.dao;
 
 import java.util.List;
 
-import Bai.ATM.model.Cash;
+import bai.atm.model.Cash;
 
 public interface CashMapper {
 	List<Cash> getAllCash();

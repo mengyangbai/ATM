@@ -1,4 +1,4 @@
-package Bai.ATM.controller;
+package bai.atm.controller;
 
 import javax.servlet.http.HttpServletResponse;
 
@@ -11,28 +11,28 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import Bai.ATM.dto.ListInfoDto;
-import Bai.ATM.dto.MessageDto;
-import Bai.ATM.dto.ReturnDtoInfo;
-import Bai.ATM.dto.UserDto;
-import Bai.ATM.exception.CustomException;
-import Bai.ATM.model.Cash;
-import Bai.ATM.model.Log;
-import Bai.ATM.service.IATMService;
-import Bai.ATM.service.ILogService;
+import bai.atm.dto.ListInfoDto;
+import bai.atm.dto.MessageDto;
+import bai.atm.dto.ReturnDtoInfo;
+import bai.atm.dto.UserDto;
+import bai.atm.exception.CustomException;
+import bai.atm.model.Cash;
+import bai.atm.model.Log;
+import bai.atm.service.IAtmService;
+import bai.atm.service.ILogService;
 
 @RestController
-@RequestMapping("/ATM")
-public class ATMController {
+@RequestMapping("/atm")
+public class AtmController {
 
 	private static final Logger LOGGER = LoggerFactory
-			.getLogger(ATMController.class);
+			.getLogger(AtmController.class);
 
 	@Autowired
 	private ILogService logService;
 	
 	@Autowired
-	private IATMService atmService;
+	private IAtmService atmService;
 	
     /**
      * @param response

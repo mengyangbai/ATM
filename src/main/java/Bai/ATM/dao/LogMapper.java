@@ -1,6 +1,6 @@
-package Bai.ATM.dao;
+package bai.atm.dao;
 
-import Bai.ATM.model.Log;
+import bai.atm.model.Log;
 
 public interface LogMapper {
 	

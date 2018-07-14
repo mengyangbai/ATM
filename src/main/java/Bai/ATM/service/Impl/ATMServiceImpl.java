@@ -1,4 +1,4 @@
-package Bai.ATM.service.Impl;
+package bai.atm.service.Impl;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -14,19 +14,18 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.util.CollectionUtils;
 
-import Bai.ATM.controller.ATMController;
-import Bai.ATM.dao.CashMapper;
-import Bai.ATM.dto.ListInfoDto;
-import Bai.ATM.dto.UserDto;
-import Bai.ATM.exception.CustomException;
-import Bai.ATM.model.Cash;
-import Bai.ATM.service.IATMService;
+import bai.atm.dao.CashMapper;
+import bai.atm.dto.ListInfoDto;
+import bai.atm.dto.UserDto;
+import bai.atm.exception.CustomException;
+import bai.atm.model.Cash;
+import bai.atm.service.IAtmService;
 
 @Service
-public class ATMServiceImpl implements IATMService{
+public class AtmserviceImpl implements IAtmService{
 
 	private static final Logger LOGGER = LoggerFactory
-			.getLogger(ATMServiceImpl.class);
+			.getLogger(AtmserviceImpl.class);
 	
 	@Autowired
 	private CashMapper cashMapper;
@@ -130,6 +129,9 @@ public class ATMServiceImpl implements IATMService{
 			res.add(neworder);
 			return;
 		}
+		if(res.size()!=0) {
+			return;
+		}
 		for(int i = 0; i < stack.length; i++) {
 			if(money-stack[i] >=0) {
 				int tmp = stack[i];
@@ -137,6 +139,9 @@ public class ATMServiceImpl implements IATMService{
 				stack[i] = Integer.MAX_VALUE;
 				withDrawHelper(money-tmp,stack,order,res);
 				order.remove(order.size() - 1);
+				if(res.size()!=0) {
+					return;
+				}
 				stack[i] = tmp;
 			}
 		}

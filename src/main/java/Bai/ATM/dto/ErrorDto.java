@@ -1,7 +1,7 @@
-package Bai.ATM.dto;
+package bai.atm.dto;
 
 public class ErrorDto implements ReturnDtoInfo {
-	private Integer code=200;                   //默认成功状态码
+	private Integer code=200;                   
 	private String message;
 	
 	private Object data;

@@ -1,6 +1,6 @@
-package Bai.ATM.model;
+package bai.atm.model;
 
-import Bai.ATM.dto.ReturnDtoInfo;
+import bai.atm.dto.ReturnDtoInfo;
 
 public class Cash implements ReturnDtoInfo{
 	private Integer value;

@@ -1,4 +1,4 @@
-package Bai.ATM.exception;
+package bai.atm.exception;
 
 import org.springframework.http.HttpStatus;
 

@@ -1,4 +1,4 @@
-package Bai.ATM.dto;
+package bai.atm.dto;
 
 public class ListInfoDto implements ReturnDtoInfo{
 	private Integer total;

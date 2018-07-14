@@ -1,4 +1,4 @@
-package Bai.ATM.datasource;
+package bai.atm.datasource;
 
 import javax.sql.DataSource;
 
@@ -17,16 +17,11 @@ import org.springframework.context.annotation.Configuration;
 
 @Configuration
 public class MybatisConfig {
-    /**
-     * 注入环境变量的值
-     */
+	
     @Autowired
     private Environment environment;
- 
-    /**
-     * 获取数据源DataSource
-     * @return
-     */
+
+
     @Bean
     public DataSource basicDataSource() {
     	BasicDataSource basicDataSource = new BasicDataSource();
@@ -37,7 +32,7 @@ public class MybatisConfig {
     }
  
     /**
-     * @param druidDataSource
+     * @param basicDataSource
      * @return
      */
     @Bean(name = "sqlSessionFactory")
@@ -45,7 +40,7 @@ public class MybatisConfig {
         SqlSessionFactoryBean bean = new SqlSessionFactoryBean();
         bean.setDataSource(basicDataSource);
         LogFactory.useLog4JLogging();
-        //添加XML目录
+        
         ResourcePatternResolver resolver = new PathMatchingResourcePatternResolver();
         String xmlPath = environment.getProperty("mybatis.config-location");
         try {
@@ -56,22 +51,12 @@ public class MybatisConfig {
             throw new RuntimeException(e);
         }
     }
- 
-    /**
-     *
-     * @param sqlSessionFactory
-     * @return
-     */
+
     @Bean
     public SqlSessionTemplate sqlSessionTemplate(SqlSessionFactory sqlSessionFactory) {
         return new SqlSessionTemplate(sqlSessionFactory);
     }
  
-    /**
-     * 增加事务
-     * @param druidDataSource
-     * @return
-     */
     @Bean
     public DataSourceTransactionManager transactionManager(DataSource basicDataSource) {
         return new DataSourceTransactionManager(basicDataSource);

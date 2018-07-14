@@ -12,12 +12,10 @@ import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.MvcResult;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import org.springframework.test.web.servlet.RequestBuilder;
-import org.springframework.test.web.servlet.ResultHandler;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
-import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
 import org.springframework.web.context.WebApplicationContext;
 
-import Bai.ATM.Application;
+import bai.atm.Application;
 
 
 
@@ -39,7 +37,6 @@ public class CashControllerTest {
 	
 	 
 		/***
-		 * 测试根据用户id获取用户信息接口
 		 * 
 		 * @throws Exception
 		 */

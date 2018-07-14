@@ -1,11 +1,11 @@
-package Bai.ATM.service.Impl;
+package bai.atm.service.Impl;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import Bai.ATM.dao.LogMapper;
-import Bai.ATM.model.Log;
-import Bai.ATM.service.ILogService;
+import bai.atm.dao.LogMapper;
+import bai.atm.model.Log;
+import bai.atm.service.ILogService;
 
 @Service
 public class LogServiceImpl implements ILogService{

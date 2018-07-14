@@ -1,4 +1,4 @@
-package Bai.ATM.dto;
+package bai.atm.dto;
 
 public class UserDto implements ReturnDtoInfo {
 	private String username;
