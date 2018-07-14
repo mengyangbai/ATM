@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="Bai.ATM.dao.LogMapper">
+
+  <insert id="insertLog" parameterType="Bai.ATM.model.Log" useGeneratedKeys="true" keyProperty="id">
+    insert into log (METHOD,REQUEST,RESPONSE,`STATUS`)
+    values (#{method,jdbcType=VARCHAR}, #{request,jdbcType=VARCHAR}, 
+      #{response,jdbcType=VARCHAR},#{status,jdbcType=INTEGER})
+  </insert>
+
+</mapper>
