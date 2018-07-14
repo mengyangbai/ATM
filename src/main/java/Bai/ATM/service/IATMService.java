@@ -1,6 +1,10 @@
 package bai.atm.service;
 
+import java.util.List;
+
 import bai.atm.dto.ListInfoDto;
+import bai.atm.dto.MessageDto;
+import bai.atm.dto.ReturnDtoInfo;
 import bai.atm.dto.UserDto;
 import bai.atm.model.Cash;
 
@@ -10,6 +14,6 @@ public interface IAtmService {
 	
 	Cash getCountByValue(Integer value);
 	
-	boolean dispenseCash(UserDto user)throws Exception;
+	MessageDto dispenseCash(UserDto user)throws Exception;
 
 }

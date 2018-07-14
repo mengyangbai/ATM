@@ -73,14 +73,12 @@ public class AtmController {
 		MessageDto message = new MessageDto();
 		
 		try{
-			boolean res = atmService.dispenseCash(user);
+			message = atmService.dispenseCash(user);
 			Log log = new Log();
 			log.setMethod("/dispense");
 			log.setRequest(user.toString());
-			log.setResponse("success");
+			log.setResponse(message.toString());
 			logService.insertLog(log);
-			message.setData(user);
-			message.setMessage(res?"success":"failure");
 		}
 		catch(CustomException e) {
 			Log log = new Log();

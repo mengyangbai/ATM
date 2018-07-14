@@ -16,6 +16,8 @@ import org.springframework.util.CollectionUtils;
 
 import bai.atm.dao.CashMapper;
 import bai.atm.dto.ListInfoDto;
+import bai.atm.dto.MessageDto;
+import bai.atm.dto.ReturnDtoInfo;
 import bai.atm.dto.UserDto;
 import bai.atm.exception.CustomException;
 import bai.atm.model.Cash;
@@ -39,20 +41,36 @@ public class AtmserviceImpl implements IAtmService{
 	}
 
 	@Transactional
-	public boolean dispenseCash(UserDto user) throws Exception {
+	public MessageDto dispenseCash(UserDto user) throws Exception {
 		
 		LOGGER.info("Starting dispense.... User===={}, Money===={}",user.getUsername(),user.getMoney());
+		MessageDto messageDto = new MessageDto();
+		//check first
+		if(user.getMoney()==null || user.getMoney()<=0) {
+			messageDto.setCode(30000);
+			messageDto.setMessage("please input a valid money. money > 0");
+			return messageDto;
+		}
+		
+		
 		List<Cash> cash = cashMapper.getAllCash();
 		
 		List<Cash> withdrawCash = withdraw(user.getMoney(),cash);
 		LOGGER.info("ATM is able to dispence.... process begin..");
-		
-		for(Cash singleNote: withdrawCash) {
-			cashMapper.dispenseCash(singleNote);			
+		if(!CollectionUtils.isEmpty(withdrawCash)) {
+			messageDto.setData(withdrawCash);
+			for(Cash singleNote: withdrawCash) {
+				cashMapper.dispenseCash(singleNote);			
+			}
+			messageDto.setMessage("success");		
+		}
+		else{
+			messageDto.setCode(30001);
+			messageDto.setMessage("insufficient cash");
 		}
 
 		LOGGER.info("Process end..");
-		return true;
+		return messageDto;
 	}
 
 	private List<Cash> withdraw(Integer money, List<Cash> cash) {
@@ -115,8 +133,7 @@ public class AtmserviceImpl implements IAtmService{
 			
 		}
 		else {
-			LOGGER.info("Not available");
-			throw new CustomException("Not available", HttpStatus.INTERNAL_SERVER_ERROR);
+			return null;
 		}
 	}
 

@@ -23,5 +23,14 @@ public class MessageDto implements ReturnDtoInfo{
 	public void setCode(Integer code) {
 		this.code = code;
 	}
+	@Override
+	public String toString() {
+	    try {
+	        return new com.fasterxml.jackson.databind.ObjectMapper().writerWithDefaultPrettyPrinter().writeValueAsString(this);
+	    } catch (com.fasterxml.jackson.core.JsonProcessingException e) {
+	        e.printStackTrace();
+	    }
+	    return null;
+	}
 
 }
