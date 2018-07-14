@@ -1,4 +1,4 @@
-package Bai.ATM.test.controller;
+package bai.atm.test.controller;
 
 import org.junit.Before;
 import org.junit.Test;

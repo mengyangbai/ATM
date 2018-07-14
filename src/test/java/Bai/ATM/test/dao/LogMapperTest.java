@@ -1,4 +1,4 @@
-package Bai.ATM.test.dao;
+package bai.atm.test.dao;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
