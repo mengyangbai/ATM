@@ -31,6 +31,7 @@ public class LogMapperTest {
     log.setRequest("req");
     log.setResponse("rep");
     log.setStatus(200);
+    logMapper.insertLog(log);
   }
-
 }
+
