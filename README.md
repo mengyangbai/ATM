@@ -4,7 +4,7 @@
 
 # Download
 
-`git https://github.com/mengyangbai/ATM.git`
+`git clone https://github.com/mengyangbai/ATM.git`
 
 To check the project, just set the database using application.properties .
 
