@@ -1,8 +1,8 @@
 # ATM
 
-##My Springboot + Maven + Mysql with Resftful API project.
+## My Springboot + Maven + Mysql with Resftful API project.
 
-#Download
+# Download
 
 `git https://github.com/mengyangbai/ATM.git`
 
