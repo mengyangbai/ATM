@@ -24,3 +24,7 @@ target/classes/mapping/LogMapper.xml
 target/test-classes/Bai/ATM/test/controller/CashControllerTest.class
 target/test-classes/Bai/ATM/test/dao/LogMapperTest.class
 target/classes/atm.sql
+target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst
+target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst
+target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst
+target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst

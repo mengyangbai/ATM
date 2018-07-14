@@ -147,15 +147,7 @@ public class AtmserviceImpl implements IAtmService{
 		}
 		return;				
 	}
-	
-	public static void main(String[] args) {
-		System.out.println("test");
-		List<List<Integer>> res = new ArrayList<List<Integer>>();
-		List<Integer> order = new ArrayList<Integer>();
-		int stack[] = {8,7,4,3,1};
-		withDrawHelper(4,stack,order,res);
-		System.out.println(res.size());
-	}
+
 
 	public Cash getCountByValue(Integer value) {
 		return cashMapper.getCountByValue(value);
